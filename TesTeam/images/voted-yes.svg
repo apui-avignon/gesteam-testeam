@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+	<defs>
+		<style>
+			.a{fill:#c9c9c9;}
+			.b{fill:none;stroke:#707070;stroke-miterlimit:10;stroke-width:20px;}
+			.c{fill:#489a5e;}
+		</style>
+	</defs>
+	<title>L'utilisateur a voté</title>
+	<polygon class="a" points="158.76 190 60.56 190 31.47 127.61 112.13 90 158.76 190"/>
+	<polygon class="a" points="158.76 190 60.56 190 31.47 127.61 112.13 90 158.76 190"/>
+	<line class="b" x1="30" y1="190" x2="170" y2="190"/>
+	<path id="Tracé_23" data-name="Tracé 23" class="c" d="M126,12.89a10,10,0,0,1,13.07.45,10.78,10.78,0,0,1,1.39,14.19c-3.75,4.54-34.35,34.7-39.95,40.18-6,6-15.15,11.26-25.07.84L61,55.59a11.08,11.08,0,0,1-.66-15.4,10,10,0,0,1,14.2-.08c.22.22.43.45.62.68C80,45.66,86.06,50.25,87,51.38Z"/>
+</svg>

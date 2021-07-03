@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .a {
+        fill: none;
+        stroke: #c9c9c9;
+        stroke-linecap: round;
+        stroke-width: 24px;
+      }
+    </style>
+  </defs>
+  <title>close</title>
+  <line class="a" x1="37.77" y1="162.23" x2="162.23" y2="37.77"/>
+  <line class="a" x1="37.77" y1="37.77" x2="162.23" y2="162.23"/>
+</svg>

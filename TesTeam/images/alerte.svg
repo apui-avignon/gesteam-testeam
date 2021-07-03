@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs><style>
+	.a{fill:#e3dd35;}
+	.b{fill:#fff;}
+</style></defs>
+<title>Alerte</title>
+<circle class="a" cx="100" cy="100" r="100"/>
+<path class="b" d="M100,36.06,36.06,145.59H163.94Zm0,91.53a7.55,7.55,0,1,1,7.55-7.55A7.55,7.55,0,0,1,100,127.59ZM92.52,105V71.14h15V105Z"/>
+</svg>

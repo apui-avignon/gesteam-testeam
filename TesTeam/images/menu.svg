@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="199.74" height="167.68" viewBox="0 0 199.74 167.68">
+  <defs>
+    <style>
+      .a {
+        fill: none;
+        stroke: #c9c9c9;
+        stroke-linecap: round;
+        stroke-width: 23.74px;
+      }
+    </style>
+  </defs>
+  <title>menu</title>
+  <g>
+    <line class="a" x1="11.87" y1="83.84" x2="187.87" y2="83.84"/>
+    <line class="a" x1="11.87" y1="155.81" x2="187.87" y2="155.81"/>
+    <line class="a" x1="11.87" y1="11.87" x2="187.87" y2="11.87"/>
+  </g>
+</svg>

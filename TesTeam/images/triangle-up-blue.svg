@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .a {
+        fill: #39b8d3;
+      }
+    </style>
+  </defs>
+  <title>triangle-up</title>
+  <path class="a" d="M200,152.37H0L100,47.63Z"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 20">
+<defs><style>
+	.a{fill:none;stroke:#e6e6e6;stroke-linecap:round;stroke-width:20px;}
+</style></defs>
+<title>Séparateur</title>
+<line class="a" x1="10" y1="10" x2="190" y2="10"/>
+</svg>

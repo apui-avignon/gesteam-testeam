@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+	<defs>
+		<style>
+			.a{fill:#c9c9c9;}
+			.b{fill:none;stroke:#707070;stroke-miterlimit:10;stroke-width:20px;}
+		</style>
+	</defs>
+	<title>L'utilisateur n'a pas voté</title>
+	<rect class="a" x="55.5" y="22.55" width="89" height="133.47" transform="translate(-28.37 50.63) rotate(-25)"/>
+	<line class="b" x1="30" y1="190" x2="170" y2="190"/>
+</svg>
