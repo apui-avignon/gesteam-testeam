@@ -2,9 +2,9 @@
 return array(
     //////////// EXAMPLE ////////////
     // 'server_name' => 'apui.univ-avignon.fr', 
-    // 'root' => '/var/www/html/GesTeam/', 
-    // 'app_name' => 'GesTeam', 
-    // 'student_app_name' => 'TesTeam', 
+    // 'root' => '/var/www/html/TesTeam/', 
+    // 'app_name' => 'TesTeam', 
+    // 'student_app_name' => 'GesTeam', 
     // 'email_suffix' => '@alumni.univ.fr', 
     // 'email_suffix_teacher' => '@univ.fr',
 
