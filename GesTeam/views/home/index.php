@@ -1,5 +1,6 @@
 <div id="main">
     <?php
+    $configs = include('config.php');
     include('header.php');
     ?>
     <main class="main">

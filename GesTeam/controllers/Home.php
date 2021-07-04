@@ -4,7 +4,7 @@ class Home extends Controller
     public function index()
     {
         session_start();
-        if (isset($_SESSION['connected']) && $_SESSION['connected'] == true) {
+        if (isset($_SESSION['connected']) && $_SESSION['connected'] == true && isset($_SESSION['course_id'])) {
             $course_id = $_SESSION['course_id'];
 
             $this->loadModel('CourseGroup');
