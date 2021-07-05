@@ -46,7 +46,7 @@ L'application utilise un système de CAS (Central Authentication Service). Si vo
 
 ### Support
 
-Cette application a été développé en ECMAScript 6 (ES6), elle ne sera donc pas accessible avec les navigateur ne supportant pas cette version.
+Cette application a été développé en ECMAScript 6 (ES6), elle ne sera donc pas accessible avec les navigateurs ne supportant pas cette version.
 
 Exemple de navigateur supporté : Google Chrome, Mozilla Firefox,...
 
