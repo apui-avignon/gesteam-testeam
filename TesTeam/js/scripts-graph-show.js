@@ -21,9 +21,9 @@ function insertOption(text,value){
 	elSelect[1].customSelect.append(option);
 }
 function populateEtudiant(v) {
-	insertOption('Tous les etudiants','');
+	insertOption('Tous les étudiants','');
     for (var i = 0; i < scriptGraphShowData.length; i++) {
-        if (v == '' || v === scriptGraphShowData[i]['id_group']) {
+        if (v == '' || v == scriptGraphShowData[i]['id_group']) {
             insertOption((scriptGraphShowData[i]['firstname']+" "+scriptGraphShowData[i]['lastname']),scriptGraphShowData[i]['username']);
         }
     }
