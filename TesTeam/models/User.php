@@ -9,9 +9,9 @@ class User extends Model
 
 
     // Insert new user
-    public function insert(string $username, string $firstname, string $lastname)
+    public function insert(string $username, string $firstname, string $lastname, string $email)
     {
-        $sql = "INSERT IGNORE INTO " . $this->table . " VALUES ('" . $username . "', '" . $firstname . "', '" . $lastname . "')";
+        $sql = "INSERT IGNORE INTO " . $this->table . " VALUES ('" . $username . "', '" . $firstname . "', '" . $lastname . "', '" . $email . "')";
         $query = $this->_connexion->prepare($sql);
         $query->execute();
         return $query->fetch();
@@ -22,6 +22,13 @@ class User extends Model
     public function identity(string $username)
     {
         $sql = "SELECT firstname, lastname FROM " . $this->table . " WHERE username = '" . $username . "'";
+        $query = $this->_connexion->prepare($sql);
+        $query->execute();
+        return $query->fetch();
+    }
+
+    public function email(string $username) {
+        $sql = "SELECT email FROM " . $this->table . " WHERE username = '" . $username . "'";
         $query = $this->_connexion->prepare($sql);
         $query->execute();
         return $query->fetch();
