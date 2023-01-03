@@ -113,9 +113,9 @@ class SaveCard extends ControllerCron
                     $mail->MsgHTML($message);
 
                     // Envoi du mail avec gestion des erreurs
-                    // if (!$mail->Send()) {
-                    //     echo 'Erreur : ' . $mail->ErrorInfo;
-                    // }
+                    if (!$mail->Send()) {
+                        echo 'Erreur : ' . $mail->ErrorInfo;
+                    }
                 }
             }
         endforeach;
