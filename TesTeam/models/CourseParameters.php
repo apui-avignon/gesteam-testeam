@@ -53,4 +53,12 @@ class CourseParameters extends Model
         $query = $this->_connexion->prepare($sql);
         $query->execute();
     }
+
+    public function all()
+    {
+        $sql = "SELECT * FROM " . $this->table;
+        $query = $this->_connexion->prepare($sql);
+        $query->execute();
+        return $query->fetchAll();
+    }
 }
