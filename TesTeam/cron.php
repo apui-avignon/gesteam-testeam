@@ -3,11 +3,11 @@ $configs = include('config.php');
 define('ROOT', $configs['root']);
 define('APP_NAME', $configs['app_name']);
 
-require_once(ROOT . 'app/Controller.php');
+require_once(ROOT . 'app/ControllerCron.php');
 require_once(ROOT . 'app/Model.php');
 
-class SaveCard extends Controller
-{
+class SaveCard extends ControllerCron
+{    
     public function cron()
     {
         $configs = include('config.php');
@@ -15,7 +15,7 @@ class SaveCard extends Controller
         require(ROOT . 'helper/PHPMailer/src/PHPMailer.php');
         require(ROOT . 'helper/PHPMailer/src/SMTP.php');
         $this->loadModel("CourseParameters");
-        $courses = $this->CourseParameters->getAll();
+        $courses = $this->CourseParameters->all();
         // For all courses, check if the day of evaluation is today (monday)
         foreach ($courses as $course) :
             $this->loadHelper('Date');
@@ -69,7 +69,7 @@ class SaveCard extends Controller
                         }
                     endforeach;
                 }
-            
+                $this->loadModel('Card');
                 $red_cards_users = $this->Card->redByCourse($course['id_course'], $evaluation_date);
 
                 if (count($red_cards_users) != 0) {
@@ -77,6 +77,8 @@ class SaveCard extends Controller
                     $course_parameters = $this->Course->findById($course['id_course']);
                     $this->loadModel('User');
                     $teacher_identity = $this->User->identity($course_parameters['username']);
+                    $user_email = $this->User->email($course_parameters['username']);
+
 
                     $message = '<html><body>';
                     $message .= 'Bonjour,<br> Vous recevez ce message dans le cadre de l\'application TesTeam.<br><br>';
@@ -96,14 +98,14 @@ class SaveCard extends Controller
 
                     $mail = new PHPMailer\PHPMailer\PHPMailer();
                     $mail->Host = $configs['host_email'];
-                    $mail->SMTPAuth   = false;
+                    $mail->SMTPAuth = false;
                     $mail->Port = 25; // Par défaut
                     $mail->CharSet = 'UTF-8';
 
                     // Expéditeur
                     $mail->SetFrom($configs['email_sender'], 'Application TesTeam');
                     // Destinataire
-                    $mail->AddAddress($teacher_identity['firstname'] . '.' . $teacher_identity['lastname'] . $configs['email_suffix_teacher'], $teacher_identity['firstname'] . ' ' . $teacher_identity['lastname']);
+                    $mail->AddAddress($user_email['email'], $teacher_identity['firstname'] . ' ' . $teacher_identity['lastname']);
                     // Objet
                     $mail->Subject = $subject;
 
@@ -111,9 +113,9 @@ class SaveCard extends Controller
                     $mail->MsgHTML($message);
 
                     // Envoi du mail avec gestion des erreurs
-                    if (!$mail->Send()) {
-                        echo 'Erreur : ' . $mail->ErrorInfo;
-                    }
+                    // if (!$mail->Send()) {
+                    //     echo 'Erreur : ' . $mail->ErrorInfo;
+                    // }
                 }
             }
         endforeach;
