@@ -18,7 +18,7 @@ class Save extends ComponentController
                 $this->Group->insert($moodle_course_group['id'], $moodle_course_group['name']);
 
                 $this->loadModel("User");
-                $this->User->insert($moodle_course_group['username'], $moodle_course_group['firstname'], $moodle_course_group['lastname']);
+                $this->User->insert($moodle_course_group['username'], $moodle_course_group['firstname'], $moodle_course_group['lastname'], $moodle_course_group['email']);
 
                 $this->loadModel("CourseGroup");
                 $this->CourseGroup->insert($moodle_course_group['id'], $_POST['course_id'], $moodle_course_group['username']);
@@ -89,7 +89,6 @@ class Save extends ComponentController
     public function update()
     {
         if (isset($_POST['course_id']) && isset($_POST['course_name']) && isset($_SESSION['connected']) && $_SESSION['connected'] == true) {
-
             $this->loadModel('CourseGroup');
             $course_groups = $this->CourseGroup->findById($_POST['course_id']);
 
@@ -103,7 +102,7 @@ class Save extends ComponentController
                 $this->Group->insert($moodle_course_group['id'], $moodle_course_group['name']);
 
                 $this->loadModel("User");
-                $this->User->insert($moodle_course_group['username'], $moodle_course_group['firstname'], $moodle_course_group['lastname']);
+                $this->User->insert($moodle_course_group['username'], $moodle_course_group['firstname'], $moodle_course_group['lastname'], $moodle_course_group['email']);
 
                 $this->loadModel("CourseGroup");
                 $this->CourseGroup->insert($moodle_course_group['id'], $_POST['course_id'], $moodle_course_group['username']);
