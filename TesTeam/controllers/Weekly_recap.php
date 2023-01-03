@@ -57,11 +57,12 @@ class Weekly_recap extends ComponentController
             foreach ($not_voted as $not_voted) :
                 $this->loadModel('User');
                 $user_identity = $this->User->identity($not_voted['username']);
+                $user_email = $this->User->email($not_voted['username']);
 
                 $message = '<html><body>';
                 $message .= 'Bonjour,<br> Vous recevez ce message dans le cadre de l\'application TesTeam.<br><br>';
                 $message .= 'N\'oubliez pas d\'aller évaluer vos paires cette semaine.<br> Pour rappel, cette application a pour but de faciliter le travail de groupe.';
-                $message .= '<br><br>Vous pouvez accéder à l\'application en cliquant <a href="https://'.$configs['server_name'].'/'. APP_NAME.'/login.php?id_cours=' . $_POST['course_id'] . '">ici</a><br><br> ';
+                $message .= '<br><br>Vous pouvez accéder à l\'application en cliquant <a href="https://'.$configs['server_name'].'/'. $configs['student_app_name'].'/index.php?course_id=' . $_POST['course_id'] . '">ici</a><br><br> ';
                 $message .= 'Si vous rencontrer un problème, veuillez contacter votre enseignant ou envoyer un mail à '. $configs['email_sender'];
                 $message .= '</body></html>';
 
@@ -73,7 +74,7 @@ class Weekly_recap extends ComponentController
                 $mail->CharSet = 'UTF-8';
 
                 $mail->SetFrom($configs['email_sender'], 'Application TesTeam');
-                $mail->AddAddress($user_identity['firstname'] . '.' . $user_identity['lastname'] . $configs['email_suffix'], $user_identity['firstname'] . ' ' . $user_identity['lastname']);
+                $mail->AddAddress($user_email['email'], $user_identity['firstname'] . ' ' . $user_identity['lastname']);
                 $mail->Subject = $subject;
                 $mail->MsgHTML($message);
 
