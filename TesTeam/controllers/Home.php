@@ -8,8 +8,10 @@ class Home extends Controller
             // User moodle infortmation
             $this->loadModel('UserMoodle');
             $user_identity = $this->UserMoodle->identity($_SESSION['user']);
+            $user_email = $this->UserMoodle->email($_SESSION['user']);
+
             $this->loadModel('User');
-            $this->User->insert($_SESSION['user'], $user_identity['lastname'], $user_identity['firstname']);
+            $this->User->insert($_SESSION['user'], $user_identity['lastname'], $user_identity['firstname'], $user_email[0]);
 
             $this->loadModel('Course');
             $teachersCourses = $this->Course->findByTeacher($_SESSION['user']);
